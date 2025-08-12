@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Portfolio Website</title>
+
+    <!-- Tailwind CDN with config (dark mode = class) -->
+    <script>
+      window.tailwind = {
+        config: {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                primary: "#0ea5e9" /* sky-500 like */,
+                accent: "#2563eb" /* blue-600 */,
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* tiny helpers */
+      .progress-bar > span {
+        display: block;
+        height: 100%;
+        border-radius: 9999px;
+      }
+      /* floating label states */
+      .field {
+        position: relative;
+      }
+      .field label {
+        position: absolute;
+        left: 14px;
+        top: 12px;
+        transform-origin: left top;
+        transition: all 0.18s ease;
+        pointer-events: none;
+      }
+      .field input:focus + label,
+      .field textarea:focus + label,
+      .field.filled label {
+        transform: translateY(-12px) scale(0.82);
+        top: 6px;
+        color: rgb(37 99 235); /* accent */
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100">
+    <!-- Header / Navbar -->
+    <header id="header" class="fixed w-full z-50">
+      <div
+        id="header-inner"
+        class="max-w-6xl mx-auto flex items-center justify-between px-5 py-3 transition-all duration-300 bg-white/60 dark:bg-slate-800/60 backdrop-blur-md rounded-b-xl shadow-sm"
+      >
+        <div class="flex items-center gap-4">
+          <a
+            href="#"
+            class="text-2xl font-extrabold tracking-tight text-accent dark:text-sky-400"
+            >Ayesha Anwar</a
+          >
+        </div>
+
+        <!-- desktop nav -->
+        <nav
+          class="hidden md:flex items-center space-x-6 text-slate-700 dark:text-slate-200 font-medium"
+        >
+          <a href="#home" class="hover:text-accent transition">Home</a>
+          <a href="#education" class="hover:text-accent transition"
+            >Education</a
+          >
+          <a href="#skills" class="hover:text-accent transition">Skills</a>
+          <a href="#projects" class="hover:text-accent transition">Projects</a>
+          <a href="#contact" class="hover:text-accent transition">Contact</a>
+        </nav>
+
+        <!-- mobile controls -->
+        <div class="flex items-center gap-3 md:hidden">
+          <a
+            href="#contact"
+            class="px-3 py-1 rounded-md bg-accent text-white text-sm"
+            >Contact</a
+          >
+          <button
+            id="menu-icon"
+            class="text-2xl p-1 text-slate-700 dark:text-slate-200"
+          >
+            <i class="bx bx-menu"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- mobile nav panel -->
+      <div
+        id="mobileNav"
+        class="md:hidden hidden bg-white dark:bg-slate-800 border-t dark:border-slate-700 shadow-sm"
+      >
+        <div class="flex flex-col px-5 py-4 space-y-3">
+          <a
+            href="#home"
+            class="py-2 px-3 rounded hover:bg-slate-100 dark:hover:bg-slate-700 transition"
+            >Home</a
+          >
+          <a
+            href="#education"
+            class="py-2 px-3 rounded hover:bg-slate-100 dark:hover:bg-slate-700 transition"
+            >Education</a
+          >
+          <a
+            href="#skills"
+            class="py-2 px-3 rounded hover:bg-slate-100 dark:hover:bg-slate-700 transition"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="py-2 px-3 rounded hover:bg-slate-100 dark:hover:bg-slate-700 transition"
+            >Projects</a
+          >
+          <a
+            href="#contact"
+            class="py-2 px-3 rounded hover:bg-slate-100 dark:hover:bg-slate-700 transition"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-28">
+      <!-- Home / Hero -->
+      <section id="home" class="dark:bg-slate-900">
+        <div
+          class="max-w-6xl mx-auto px-6 py-12 md:py-20 flex flex-col-reverse md:flex-row items-center gap-10"
+        >
+          <div class="md:w-1/2">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+              Hi, I'm
+              <span class="text-accent dark:text-sky-400">Ayesha Anwar</span>
+            </h1>
+            <h3
+              class="text-lg md:text-xl font-semibold text-slate-600 dark:text-slate-300 mb-4"
+            >
+              Frontend Developer
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 mb-6">
+              A Frontend & WordPress Developer who creates visually appealing,
+              responsive, and interactive websites using HTML, CSS, JavaScript,
+              Tailwindcss Bootstrap and WordPress. Skilled in ensuring smooth
+              performance, cross-browser compatibility, and an engaging user
+              experience on all devices.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mb-6">
+              <a
+                href="image.pdf"
+                download
+                class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 transition border-2 border-slate-500"
+                >Download CV</a
+              >
+              <a
+                href="#contact"
+                id="letsTalkBtn"
+                class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 transition border-2 border-slate-500"
+                >Let's Talk</a
+              >
+            </div>
+
+            <div
+              class="flex items-center gap-4 text-2xl text-slate-700 dark:text-slate-200"
+            >
+              <a
+                href="https://github.com/AyeshaAnwar2"
+                target="_blank"
+                class="p-2 rounded-full hover:bg-[#3ABEF9] hover:text-white transition border-2 border-slate-500"
+                ><i class="bx bxl-github"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/ayesha-anwar-a58070337?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank"
+                class="p-2 rounded-full hover:bg-[#3ABEF9] hover:text-white transition border-2 border-slate-500"
+                ><i class="bx bxl-linkedin"></i
+              ></a>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=official.ayeshaanwar107@gmail.com"
+                target="_blank"
+                class="p-2 rounded-full hover:bg-[#3ABEF9] hover:text-white transition border-2 border-slate-500"
+              >
+                <i class="bx bx-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 flex justify-center">
+            <img
+              src="Black Simple Bold Professional Business Twitter Profile Picture.png"
+              alt="ayesha profile"
+              class="w-72 md:w-96 bg-transparent rounded-full"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section
+        id="education"
+        class="bg-gray-50 dark:bg-slate-800/40 py-12 md:py-16"
+      >
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-10">
+            My <span class="text-accent">Education</span>
+          </h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Education Column -->
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Education</h3>
+              <div class="space-y-4">
+                <article
+                  class="p-5 bg-white dark:bg-slate-700 rounded-xl hover:bg-slate-900 dark:hover:bg-slate-600 transition"
+                >
+                  <time class="text-xs text-slate-500 dark:text-slate-300"
+                    >2023 - 2027</time
+                  >
+                  <h4 class="font-bold text-lg mt-2">BS Computer Science</h4>
+                  <p class="mt-2 text-slate-700 dark:text-slate-200">
+                    Pursuing a Bachelor’s in Computer Science, currently in the
+                    3rd semester with a CGPA of 3.45/4.00. Focused on developing
+                    strong problem-solving skills, mastering programming
+                    fundamentals, and applying knowledge through practical
+                    projects.
+                  </p>
+                </article>
+
+                <article
+                  class="p-5 bg-white rounded-xl hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 transition"
+                >
+                  <time class="text-xs text-slate-500 dark:text-slate-300"
+                    >2021 - 2023</time
+                  >
+                  <h4 class="font-bold text-lg mt-2">Intermediate</h4>
+                  <p class="mt-2 text-slate-700 dark:text-slate-200">
+                    I completed my Intermediate from Government Graduate
+                    College, Bahawalpur, in FSC Pre-Engineering.
+                  </p>
+                </article>
+
+                <article
+                  class="p-5 bg-white rounded-xl hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 transition"
+                >
+                  <time class="text-xs text-slate-500 dark:text-slate-300"
+                    >2019 - 2021</time
+                  >
+                  <h4 class="font-bold text-lg mt-2">Matric</h4>
+                  <p class="mt-2 text-slate-700 dark:text-slate-200">
+                    I completed my matric from Government Girls High School
+                    Canal Colony , Bahawalpur securing 1025 marks.
+                  </p>
+                </article>
+              </div>
+            </div>
+
+            <!-- Experience Column -->
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Experience</h3>
+              <div class="space-y-4">
+                <article
+                  class="p-5 bg-white rounded-xl hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 transition"
+                >
+                  <time class="text-xs text-slate-500 dark:text-slate-300"
+                    >June 2025 - July 2025</time
+                  >
+                  <h4 class="font-bold text-lg mt-2">Web Developer</h4>
+                  <p class="mt-2 text-slate-700 dark:text-slate-200">
+                    I completed an internship in Web Development at Learning
+                    Horizon, where I gained hands-on experience in building and
+                    maintaining websites.
+                  </p>
+                </article>
+
+                <article
+                  class="p-5 bg-white rounded-xl hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 transition"
+                >
+                  <time class="text-xs text-slate-500 dark:text-slate-300"
+                    >July 2025 - August 2025</time
+                  >
+                  <h4 class="font-bold text-lg mt-2">Web Developer</h4>
+                  <p class="mt-2 text-slate-700 dark:text-slate-200">
+                    I completed an internship in Web Development at Code Alpha,
+                    where I gained hands-on experience in building and
+                    maintaining websites.
+                  </p>
+                </article>
+
+                
+                <article
+                  class="p-5 bg-white rounded-xl hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 transition"
+                >
+                  <time class="text-xs text-slate-500 dark:text-slate-300"
+                    >March 2025 - August 2025</time
+                  >
+                  <h4 class="font-bold text-lg mt-2">Collaboration Projects</h4>
+                  <p class="mt-2 text-slate-700 dark:text-slate-200">
+                    I collaborated on various web development projects with various freelancers,
+                    where I built roadmap genrator , feedback collector , Business dashboard for local shops and many more websites.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="py-12 md:py-16 bg-white dark:bg-slate-900">
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-10">
+            My <span class="text-accent">Skills</span>
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div class="bg-gray-50 dark:bg-slate-800 p-6 rounded-xl shadow">
+              <h3 class="text-lg font-semibold mb-4">Coding Skills</h3>
+
+              <!-- progress item -->
+              <div class="space-y-5">
+                <!-- HTML 90% -->
+                <div class="mb-4">
+                  <div class="flex justify-between mb-1">
+                    <span class="text-white">HTML</span>
+                    <span class="text-white">100%</span>
+                  </div>
+                  <div class="w-full bg-white/30 rounded-full h-2">
+                    <div
+                      class="bg-white h-2 rounded-full"
+                      style="width: 100%"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- CSS 70% -->
+                <div class="mb-4">
+                  <div class="flex justify-between mb-1">
+                    <span class="text-white">CSS</span>
+                    <span class="text-white">95%</span>
+                  </div>
+                  <div class="w-full bg-white/30 rounded-full h-2">
+                    <div
+                      class="bg-white h-2 rounded-full"
+                      style="width: 95%"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Javascript 50% -->
+                <div class="mb-4">
+                  <div class="flex justify-between mb-1">
+                    <span class="text-white">JavaScript</span>
+                    <span class="text-white">90%</span>
+                  </div>
+                  <div class="w-full bg-white/30 rounded-full h-2">
+                    <div
+                      class="bg-white h-2 rounded-full"
+                      style="width: 90%"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Tailwind 100% -->
+                <div class="mb-4">
+                  <div class="flex justify-between mb-1">
+                    <span class="text-white">Tailwindcss</span>
+                    <span class="text-white">100%</span>
+                  </div>
+                  <div class="w-full bg-white/30 rounded-full h-2">
+                    <div
+                      class="bg-white h-2 rounded-full"
+                      style="width: 100%"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Tailwind 100% -->
+                <div class="mb-4">
+                  <div class="flex justify-between mb-1">
+                    <span class="text-white">Bootstrap</span>
+                    <span class="text-white">100%</span>
+                  </div>
+                  <div class="w-full bg-white/30 rounded-full h-2">
+                    <div
+                      class="bg-white h-2 rounded-full"
+                      style="width: 100%"
+                    ></div>
+                  </div>
+                </div>
+                <!-- React 40% -->
+                <div class="mb-4">
+                  <div class="flex justify-between mb-1">
+                    <span class="text-white">React</span>
+                    <span class="text-white">80%</span>
+                  </div>
+                  <div class="w-full bg-white/30 rounded-full h-2">
+                    <div
+                      class="bg-white h-2 rounded-full"
+                      style="width: 80%"
+                    ></div>
+                  </div>
+                </div>
+                  <div class="mb-4">
+                  <div class="flex justify-between mb-1">
+                    <span class="text-white">WordPress</span>
+                    <span class="text-white">90%</span>
+                  </div>
+                  <div class="w-full bg-white/30 rounded-full h-2">
+                    <div
+                      class="bg-white h-2 rounded-full"
+                      style="width: 90%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add a short about / tools or soft skills box -->
+            <div class="bg-gray-50 dark:bg-slate-800 p-6 rounded-xl shadow">
+              <h3 class="text-lg font-semibold mb-4">Tools & Soft Skills</h3>
+              <ul
+                class="grid grid-cols-2 gap-3 text-slate-700 dark:text-slate-200"
+              >
+                <li
+                  class="px-3 py-2 bg-white dark:bg-slate-700 rounded hover:scale-[1.02] transition text-sm"
+                >
+                  VS Code
+                </li>
+                <li
+                  class="px-3 py-2 bg-white dark:bg-slate-700 rounded hover:scale-[1.02] transition text-sm"
+                >
+                  Git & GitHub
+                </li>
+                <li
+                  class="px-3 py-2 bg-white dark:bg-slate-700 rounded hover:scale-[1.02] transition text-sm"
+                >
+                  Responsive Design
+                </li>
+                <li
+                  class="px-3 py-2 bg-white dark:bg-slate-700 rounded hover:scale-[1.02] transition text-sm"
+                >
+                  Problem Solving
+                </li>
+                <li
+                  class="px-3 py-2 bg-white dark:bg-slate-700 rounded hover:scale-[1.02] transition text-sm"
+                >
+                  Figma (basic)
+                </li>
+                <li
+                  class="px-3 py-2 bg-white dark:bg-slate-700 rounded hover:scale-[1.02] transition text-sm"
+                >
+                  Communication
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section
+        id="projects"
+        class="py-12 md:py-16 bg-gray-50 dark:bg-slate-900"
+      >
+        <div class="max-w-6xl mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-10">
+            My <span class="text-accent">Projects</span>
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- Project 1 -->
+            <article
+              class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow hover:shadow-2xl transform hover:-translate-y-1 transition"
+            >
+              <img
+                src="Black and White Modern Online Shop Facebook Post (4).png"
+                alt="User-Authentication"
+                class="w-full h-48 object-fill"
+              />
+              <div class="p-4">
+                <h3 class="font-bold text-lg mb-2">
+                  User-Authentication System
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mb-3">
+                  User Authentication System – Developed a secure and responsive
+                  authentication system using React, Tailwind CSS, and Context
+                  API, featuring user registration, login, role management, and
+                  persistent sessions via localStorage
+                </p>
+                <a
+                  href="WhatsApp Video 2025-07-27 at 9.48.52 PM.mp4"
+                  target="_blank"
+                  class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 transition"
+                  >View Project</a
+                >
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article
+              class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow hover:shadow-2xl transform hover:-translate-y-1 transition"
+            >
+              <img
+                src="Green Cute Baby Food Product Instagram Post (1).png"
+                alt="Baby food"
+                class="w-full h-48 object-fill"
+              />
+              <div class="p-4">
+                <h3 class="font-bold text-lg mb-2">
+                  Ecomrece Baby-Food Website
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mb-3">
+                  Baby Healthy Food E-Commerce Website – Built a responsive and
+                  user-friendly online store using HTML, Tailwind CSS, and
+                  JavaScript, showcasing nutritious baby food products with
+                  interactive features.
+                </p>
+                <a
+                  href="WhatsApp Video 2025-07-27 at 9.48.53 PM.mp4"
+                  target="_blank"
+                  class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 transition"
+                  >View Project</a
+                >
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article
+              class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow hover:shadow-2xl transform hover:-translate-y-1 transition"
+            >
+              <img
+                src="Black and White Modern Online Shop Facebook Post (2).png"
+                alt="Feedback Collector"
+                class="w-full h-48 object-fill"
+              />
+              <div class="p-4">
+                <h3 class="font-bold text-lg mb-2">Feedback Collector</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mb-3">
+                  Feedback Collector for Freelancers – Created a responsive web
+                  app using HTML, Tailwind CSS, and JavaScript that allows
+                  freelancers to easily collect feedback, helping build
+                  credibility and showcase testimonials professionally.
+                </p>
+                <a
+                  href="WhatsApp Video 2025-07-27 at 9.48.16 PM (1).mp4"
+                  target="_blank"
+                  class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 transition"
+                  >View Project</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section
+        id="contact"
+        class="py-12 md:py-16 bg-gray-100 dark:bg-slate-800/40"
+      >
+        <div class="max-w-3xl mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-8">
+            Contact <span class="text-accent">Me</span>
+          </h2>
+
+          <form
+            onsubmit="sendToWhatsApp(event)"
+            class="bg-white dark:bg-slate-700 text-black p-6 rounded-xl shadow space-y-4"
+          >
+            <input
+              type="text"
+              id="name"
+              placeholder="Your Name"
+              required
+              class="w-full  p-3 rounded"
+            />
+            <input
+              type="email"
+              id="email"
+              placeholder="Your Email"
+              required
+              class="w-full p-3 rounded"
+            />
+           
+            <textarea
+              id="message"
+              text-color="black"
+              placeholder="Your Message"
+              required
+              class="w-full p-3 rounded"
+            ></textarea>
+            <button
+              type="submit"
+              class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-600 text-white hover:bg-slate-500 dark:bg-slate-500 dark:hover:bg-slate-400 transition"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-white dark:bg-slate-900 py-6">
+        <div
+          class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <p class="text-sm text-slate-600 dark:text-slate-400">
+            Copyright &copy; 2025 | All rights reserved
+          </p>
+          <div class="flex items-center gap-4">
+            <a
+              href="#"
+              class="p-2 rounded-full hover:bg-[#3ABEF9] border-2 border-slate-500 hover:text-white transition"
+              ><i class="bx bx-up-arrow-alt"></i
+            ></a>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              Made with ❤️
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Scripts -->
+    <!-- Scripts -->
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menu-icon");
+      const mobileNav = document.getElementById("mobileNav");
+      menuBtn.addEventListener("click", () => {
+        mobileNav.classList.toggle("hidden");
+        menuBtn.querySelector("i").classList.toggle("bx-x");
+      });
+
+      // Sticky header effect on scroll (add shadow / stronger bg)
+      const headerInner = document.getElementById("header-inner");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 40) {
+          headerInner.classList.add(
+            "shadow-lg",
+            "backdrop-blur-md",
+            "bg-white/80",
+            "dark:bg-slate-800/80"
+          );
+        } else {
+          headerInner.classList.remove("shadow-lg");
+        }
+      });
+
+      // Dark mode toggle (uses class on html element)
+      const darkToggle = document.getElementById("darkToggle");
+      const htmlEl = document.documentElement;
+      const darkIcon = document.getElementById("darkIcon");
+
+      // Initialize from localStorage
+      if (localStorage.getItem("theme") === "dark") {
+        htmlEl.classList.add("dark");
+        darkIcon.className = "bx bx-sun";
+      } else {
+        htmlEl.classList.remove("dark");
+        darkIcon.className = "bx bx-moon";
+      }
+
+      darkToggle.addEventListener("click", () => {
+        htmlEl.classList.toggle("dark");
+        const isDark = htmlEl.classList.contains("dark");
+        darkIcon.className = isDark ? "bx bx-sun" : "bx bx-moon";
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      });
+
+      // Smooth scroll for Let's Talk button and anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", function (e) {
+          const target = this.getAttribute("href");
+          if (target.length > 1) {
+            e.preventDefault();
+            document
+              .querySelector(target)
+              .scrollIntoView({ behavior: "smooth", block: "start" });
+            // close mobile nav if open
+            if (!mobileNav.classList.contains("hidden")) {
+              mobileNav.classList.add("hidden");
+              menuBtn.querySelector("i").classList.remove("bx-x");
+            }
+          }
+        });
+      });
+
+      // Contact form submit
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const fullName =
+            document.getElementById("fullName").value || "friend";
+          alert("Thank you " + fullName + "! Your message has been submitted.");
+          this.reset();
+          // clear floating labels
+          document
+            .querySelectorAll(".field")
+            .forEach((f) => f.classList.remove("filled"));
+        });
+
+      // Floating label - mark filled if input has value or on focus
+      document
+        .querySelectorAll(".field input, .field textarea")
+        .forEach((el) => {
+          const parent = el.closest(".field");
+          const check = () => {
+            if (el.value.trim() !== "") parent.classList.add("filled");
+            else parent.classList.remove("filled");
+          };
+          el.addEventListener("input", check);
+          el.addEventListener("blur", check);
+          el.addEventListener("focus", () => parent.classList.add("filled"));
+          // run once in case there's prefilled content
+          check();
+        });
+
+      // Animated skill bars when in view
+      const progressBars = document.querySelectorAll(".progress-bar");
+      function animateBars() {
+        progressBars.forEach((bar) => {
+          const target = +bar.getAttribute("data-target") || 0;
+          const rect = bar.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 50) {
+            // animate width to target
+            bar.style.transition = "width 1200ms cubic-bezier(.2,.9,.2,1)";
+            bar.style.width = target + "%";
+          }
+        });
+      }
+      window.addEventListener("scroll", animateBars);
+      window.addEventListener("load", animateBars);
+
+      // small accessibility: press Esc to close mobile nav
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !mobileNav.classList.contains("hidden")) {
+          mobileNav.classList.add("hidden");
+          menuBtn.querySelector("i").classList.remove("bx-x");
+        }
+      });
+
+      // whatsApp contact form submit
+    </script>
+  </body>
+</html>
+    <script>
+      function sendToWhatsApp(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        const whatsappNumber = "923277926370"; // Replace with your WhatsApp number
+        const whatsappMessage = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+          whatsappMessage
+        )}`;
+
+        window.open(whatsappUrl, "_blank");
+      }
+    </script>
+  </body>
