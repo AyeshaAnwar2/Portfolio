@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Portfolio Projects</title>
+
+    <!-- Tailwind CDN with config (dark mode = class) -->
+    <script>
+      window.tailwind = {
+        config: {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                primary: "#0ea5e9" /* sky-500 like */,
+                accent: "#2563eb" /* blue-600 */,
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* tiny helpers */
+      .progress-bar > span {
+        display: block;
+        height: 100%;
+        border-radius: 9999px;
+      }
+      /* floating label states */
+      .field {
+        position: relative;
+      }
+      .field label {
+        position: absolute;
+        left: 14px;
+        top: 12px;
+        transform-origin: left top;
+        transition: all 0.18s ease;
+        pointer-events: none;
+      }
+      .field input:focus + label,
+      .field textarea:focus + label,
+      .field.filled label {
+        transform: translateY(-12px) scale(0.82);
+        top: 6px;
+        color: rgb(37 99 235); /* accent */
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  </head>
+  <body class="bg-gray-50 text-slate-800">
+    <!-- Header / Navbar -->
+    <!-- Header / Navbar -->
+    <header id="header" class="fixed w-full z-50">
+      <div
+        id="header-inner"
+        class="max-w-6xl mx-auto flex items-center justify-between px-5 py-3 transition-all duration-300 bg-slate-800 backdrop-blur-md rounded-b-xl shadow-sm"
+      >
+        <div class="flex items-center gap-4">
+          <a
+            href="#"
+            class="text-2xl font-extrabold tracking-tight text-accent text-sky-400"
+            >Ayesha Anwar</a
+          >
+        </div>
+
+        <!-- desktop nav -->
+        <nav
+          class="hidden md:flex items-center space-x-6 text-slate-200 font-medium"
+        >
+          <a href="index.html#home" class="hover:text-accent transition"
+            >Home</a
+          >
+          <a href="index.html#education" class="hover:text-accent transition"
+            >Services</a
+          >
+          <a href="index.html#skills" class="hover:text-accent transition"
+            >Skills</a
+          >
+          <a href="index.html#projects" class="hover:text-accent transition"
+            >Projects</a
+          >
+          <a href="index.html#contact" class="hover:text-accent transition"
+            >Contact</a
+          >
+        </nav>
+
+        <!-- mobile controls -->
+        <div class="flex items-center gap-3 md:hidden bg-slate-800">
+          <button
+            id="menu-icon"
+            class="text-2xl p-1 text-slate-200 transition-all duration-300"
+          >
+            <i class="bx bx-menu"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <nav
+      id="mobileNav"
+      class="hidden md:hidden bg-slate-800 p-4 fixed w-full z-50 top-16 left-0 shadow-lg transition-all duration-500"
+    >
+      <a href="#home" class="block py-2 text-slate-200 hover:text-accent"
+        >Home</a
+      >
+      <a href="#education" class="block py-2 text-slate-200 hover:text-accent"
+        >Services</a
+      >
+      <a href="#skills" class="block py-2 text-slate-200 hover:text-accent"
+        >Skills</a
+      >
+      <a href="#projects" class="block py-2 text-slate-200 hover:text-accent"
+        >Projects</a
+      >
+      <a href="#contact" class="block py-2 text-slate-200 hover:text-accent"
+        >Contact</a
+      >
+    </nav>
+    <!-- Projects -->
+    <section id="projects" class="py-12 md:py-16 bg-slate-900">
+      <div class="max-w-6xl mx-auto px-6 mt-10">
+        <h2
+          class="text-3xl font-bold text-center mb-10 max-w-6xl mx-auto items-center justify-between px-5 py-3 transition-all duration-300 bg-slate-800 backdrop-blur-md rounded-xl shadow-sm text-white"
+        >
+          My <span class="text-accent">Projects</span>
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Project 1 -->
+          <article
+            class="bg-slate-800 rounded-xl overflow-hidden shadow hover:shadow-2xl transform hover:-translate-y-1 transition"
+          >
+            <img
+              src="firstpro.png"
+              alt="User-Authentication"
+              class="w-full h-48 object-fill"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-2 text-white">
+                CyberEdge IT Services Website
+              </h3>
+              <p class="text-sm text-slate-300 mb-3">
+                A sleek and minimal IT service provider website built on
+                Bootstrap. Includes homepage banner, services section, project
+                gallery, about page, and contact form. Designed with attention
+                to typography, spacing, and mobile friendliness.
+              </p>
+              <a
+                href="https://learningwebsit.netlify.app"
+                target="_blank"
+                class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-700 text-white hover:bg-slate-500 transition border-2 border-slate-500"
+                >View Project</a
+              >
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article
+            class="bg-slate-800 rounded-xl overflow-hidden shadow hover:shadow-2xl transform hover:-translate-y-1 transition"
+          >
+            <img
+              src="Secondpro.png"
+              alt="Baby food"
+              class="w-full h-48 object-fill"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-2 text-white">
+                Ecomrece Baby-Food Website
+              </h3>
+              <p class="text-sm text-slate-300 mb-3">
+                Baby Healthy Food E-Commerce Website – Built a responsive and
+                user-friendly online store using HTML, Tailwind CSS, and
+                JavaScript, showcasing nutritious baby food products with
+                interactive features.
+              </p>
+              <a
+                href="https://ecomrecewebsite.netlify.app"
+                target="_blank"
+                class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-700 text-white hover:bg-slate-500 transition border-2 border-slate-500"
+                >View Project</a
+              >
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article
+            class="bg-slate-800 rounded-xl overflow-hidden shadow hover:shadow-2xl transform hover:-translate-y-1 transition"
+          >
+            <img
+              src="threepro.png"
+              alt="Feedback Collector"
+              class="w-full h-48 object-fill"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-2 text-white">PW Skills</h3>
+              <p class="text-sm text-slate-300 mb-3">
+                A responsive skill development courses website built using
+                Tailwind CSS. The platform highlights various learning programs
+                and courses with clear categorization and modern UI.Designed
+                using Tailwind’s utility classes for clean structure,
+              </p>
+              <a
+                href="https://pwskil.netlify.app"
+                target="_blank"
+                class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-700 text-white hover:bg-slate-500 transition border-2 border-slate-500"
+                >View Project</a
+              >
+            </div>
+          </article>
+
+          <!-- project4 -->
+          <article
+            class="bg-slate-800 rounded-xl overflow-hidden shadow hover:shadow-2xl transform hover:-translate-y-1 transition"
+          >
+            <img
+              src="fourpro.png"
+              alt="Feedback Collector"
+              class="w-full h-48 object-fill"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-2 text-white">
+                Bean Scene Coffee
+              </h3>
+              <p class="text-sm text-slate-300 mb-3">
+                Created a modern and responsive coffee shop website using
+                WordPress and Elementor. Designed an attractive menu section,
+                about page. Focused on a warm café-themed UI, smooth navigation,
+                and mobile-friendly layout.
+              </p>
+              <a
+                href="localhost_wordpress_cofee_ (1).png"
+                target="_blank"
+                class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-700 text-white hover:bg-slate-500 transition border-2 border-slate-500"
+                >View Project</a
+              >
+            </div>
+          </article>
+
+          <!-- project5 -->
+          <article
+            class="bg-slate-800 rounded-xl overflow-hidden shadow hover:shadow-2xl transform hover:-translate-y-1 transition"
+          >
+            <img
+              src="fivepro.png"
+              alt="Feedback Collector"
+              class="w-full h-48 object-fill"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-2 text-white">Dwello Property</h3>
+              <p class="text-sm text-slate-300 mb-3">
+                A responsive property listing website built using WordPress and
+                Elementor. The platform showcases various properties with
+                advanced filtering options and a modern UI. Designed using
+                Tailwind’s utility classes for clean structure,
+              </p>
+              <a
+                href="localhost_wordpress_all-properties_.png"
+                target="_blank"
+                class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-700 text-white hover:bg-slate-500 transition border-2 border-slate-500"
+                >View Project</a
+              >
+            </div>
+          </article>
+
+          <!-- projects6 -->
+          <article
+            class="bg-slate-800 rounded-xl overflow-hidden shadow hover:shadow-2xl transform hover:-translate-y-1 transition"
+          >
+            <img
+              src="sixpro.png"
+              alt="Feedback Collector"
+              class="w-full h-48 object-fill"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-2 text-white">
+                LD Property Maintenance
+              </h3>
+              <p class="text-sm text-slate-300 mb-3">
+                Built a professional and responsive property maintenance service
+                website using WordPress and Elementor. Included service
+                sections, call-to-actions for bookings. Focused on clean layout,
+                service-focused content, and a user-friendly experience.
+              </p>
+              <a
+                href="skilltest.muavaz.com_home_.png"
+                target="_blank"
+                class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-700 text-white hover:bg-slate-500 transition border-2 border-slate-500"
+                >View Project</a
+              >
+            </div>
+          </article>
+
+          <!-- project7 -->
+          <article
+            class="bg-slate-800 rounded-xl overflow-hidden shadow hover:shadow-2xl transform hover:-translate-y-1 transition"
+          >
+            <img
+              src="sevenpro.png"
+              alt="Feedback Collector"
+              class="w-full h-48 object-fill"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-2 text-white">Agrios Agribot</h3>
+              <p class="text-sm text-slate-300 mb-3">
+                Developed a modern and responsive agriculture solutions website
+                using React and Tailwind CSS. Implemented clean UI components,
+                product/service showcase sections, and smooth navigation with a
+                focus on performance, simplicity, and mobile-friendly design.
+              </p>
+              <a
+                href="https://genuine-rugelach-c98ebf.netlify.app"
+                target="_blank"
+                class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-700 text-white hover:bg-slate-500 transition border-2 border-slate-500"
+                >View Project</a
+              >
+            </div>
+          </article>
+
+          <!-- project8 -->
+          <article
+            class="bg-slate-800 rounded-xl overflow-hidden shadow hover:shadow-2xl transform hover:-translate-y-1 transition"
+          >
+            <img
+              src="eightpro.png"
+              alt="Feedback Collector"
+              class="w-full h-48 object-fill"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-2 text-white">RestoNest</h3>
+              <p class="text-sm text-slate-300 mb-3">
+                Developed a modern and responsive restaurant website using
+                WordPress and Elementor. Designed an engaging menu section,
+                reservation form, and gallery. Focused on vibrant visuals,
+                intuitive navigation, and mobile-friendly layout for an enhanced
+                user experience.
+              </p>
+              <a
+                href="localhost_wordpress_my-restaurant-website_ (1).png"
+                target="_blank"
+                class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-700 text-white hover:bg-slate-500 transition border-2 border-slate-500"
+                >View Project</a
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

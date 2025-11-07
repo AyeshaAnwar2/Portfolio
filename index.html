@@ -57,6 +57,8 @@
         color: rgb(37 99 235); /* accent */
       }
     </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   </head>
   <body class="bg-gray-50 text-slate-800">
     <!-- Header / Navbar -->
@@ -79,9 +81,7 @@
           class="hidden md:flex items-center space-x-6 text-slate-200 font-medium"
         >
           <a href="#home" class="hover:text-accent transition">Home</a>
-          <a href="#education" class="hover:text-accent transition"
-            >Education</a
-          >
+          <a href="#education" class="hover:text-accent transition">Services</a>
           <a href="#skills" class="hover:text-accent transition">Skills</a>
           <a href="#projects" class="hover:text-accent transition">Projects</a>
           <a href="#contact" class="hover:text-accent transition">Contact</a>
@@ -89,7 +89,10 @@
 
         <!-- mobile controls -->
         <div class="flex items-center gap-3 md:hidden bg-slate-800">
-          <button id="menu-icon" class="text-2xl p-1 text-slate-200">
+          <button
+            id="menu-icon"
+            class="text-2xl p-1 text-slate-200 transition-all duration-300"
+          >
             <i class="bx bx-menu"></i>
           </button>
         </div>
@@ -98,13 +101,13 @@
 
     <nav
       id="mobileNav"
-      class="hidden md:hidden bg-slate-800 p-4 fixed w-full z-50 top-16 left-0 shadow-lg"
+      class="hidden md:hidden bg-slate-800 p-4 fixed w-full z-50 top-16 left-0 shadow-lg transition-all duration-500"
     >
       <a href="#home" class="block py-2 text-slate-200 hover:text-accent"
         >Home</a
       >
       <a href="#education" class="block py-2 text-slate-200 hover:text-accent"
-        >Education</a
+        >Services</a
       >
       <a href="#skills" class="block py-2 text-slate-200 hover:text-accent"
         >Skills</a
@@ -130,14 +133,14 @@
               <span class="text-accent text-sky-400">Ayesha Anwar</span>
             </h1>
             <h3 class="text-lg md:text-xl font-semibold text-slate-300 mb-4">
-              Frontend Developer
+              <span id="typed" class="text-blue-600"></span>
             </h3>
             <p class="text-slate-300 mb-6">
-              A Frontend & WordPress Developer who creates visually appealing,
-              responsive, and interactive websites using HTML, CSS, JavaScript,
-              Tailwindcss Bootstrap and WordPress. Skilled in ensuring smooth
-              performance, cross-browser compatibility, and an engaging user
-              experience on all devices.
+              WordPress Developer with strong frontend skills. I build
+              responsive, fast, and easy-to-manage websites using WordPress,
+              Elementor, and custom theme development. Skilled in HTML, CSS,
+              Tailwind, Bootstrap and JavaScript with a focus on clean design,
+              usability, and performance.
             </p>
 
             <div class="flex flex-wrap gap-3 mb-6">
@@ -179,7 +182,7 @@
 
           <div class="md:w-1/2 flex justify-center">
             <img
-              src="Black Simple Bold Professional Business Twitter Profile Picture.png"
+              src="Blue Minimalist Instagram Profile Picture.png"
               alt="ayesha profile"
               class="w-72 md:w-96 bg-transparent rounded-full"
             />
@@ -192,50 +195,67 @@
           <h2
             class="text-3xl font-bold text-center mb-10 max-w-6xl mx-auto items-center justify-between px-5 py-3 transition-all duration-300 bg-slate-800 backdrop-blur-md rounded-xl shadow-sm text-white"
           >
-            My <span class="text-accent">Education</span>
+            My <span class="text-accent">Services</span>
           </h2>
           <div class="grid md:grid-cols-2 gap-8">
             <!-- Education Column -->
             <div>
-              <h3 class="text-xl font-semibold mb-4 text-white">Education</h3>
-              <div class="space-y-4">
+              <div
+                class="space-y-4 flex flex-col align-center justify-betweens"
+              >
                 <article
-                  class="p-5 bg-slate-700 rounded-xl hover:bg-slate-600 transition"
+                  class="p-5 bg-slate-700 rounded-xl hover:bg-slate-600 transition flex flex-col justify-center items-center"
                 >
-                  <time class="text-slate-300">2023 - 2027</time>
+                  <time
+                    class="text-slate-300 text-3xl bg-slate-800 p-2 rounded-full items-center justify-between"
+                  >
+                    <i class="bx bx-copy-alt p-2"></i>
+                  </time>
                   <h4 class="font-bold text-lg mt-2 text-white">
-                    BS Computer Science
+                    Website Cloning & Re-Design
                   </h4>
-                  <p class="mt-2 text-slate-200">
-                    Pursuing a Bachelor’s in Computer Science, currently in the
-                    3rd semester with a CGPA of 3.45/4.00. Focused on developing
-                    strong problem-solving skills, mastering programming
-                    fundamentals, and applying knowledge through practical
-                    projects.
+                  <p class="mt-2 text-slate-200 text-center">
+                    Recreate or modernize any website design into a clean,
+                    responsive, and high-performance WordPress site. Keeping the
+                    same style or improving the look of your choice.
                   </p>
                 </article>
 
                 <article
-                  class="p-5 bg-slate-700 rounded-xl hover:bg-slate-600 transition"
+                  class="p-5 bg-slate-700 rounded-xl hover:bg-slate-600 transition flex flex-col justify-center items-center"
                 >
-                  <time class="text-xs text-slate-300">2021 - 2023</time>
+                  <time
+                    class="text-slate-300 text-3xl bg-slate-800 p-2 rounded-full items-center justify-between"
+                  >
+                    <i class="bx bx-shape-circle p-2"></i>
+                  </time>
                   <h4 class="font-bold text-lg mt-2 text-white">
-                    Intermediate
+                    Figma Conversion
                   </h4>
-                  <p class="mt-2 text-slate-200">
-                    I completed my Intermediate from Government Graduate
-                    College, Bahawalpur, in FSC Pre-Engineering.
+                  <p class="mt-2 text-slate-200 text-center">
+                    Convert your Figma design into a pixel-perfect, fully
+                    functional WordPress website. I will translate your Figma
+                    layouts into responsive WordPress themes using Elementor or
+                    custom development.
                   </p>
                 </article>
 
                 <article
-                  class="p-5 bg-slate-700 rounded-xl hover:bg-slate-600 transition"
+                  class="p-5 bg-slate-700 rounded-xl hover:bg-slate-600 transition flex flex-col justify-center items-center"
                 >
-                  <time class="text-xs text-slate-300">2019 - 2021</time>
-                  <h4 class="font-bold text-lg mt-2 text-white">Matric</h4>
-                  <p class="mt-2 text-slate-200">
-                    I completed my matric from Government Girls High School
-                    Canal Colony , Bahawalpur securing 1025 marks.
+                  <time
+                    class="text-slate-300 text-3xl bg-slate-800 p-2 rounded-full items-center justify-between"
+                  >
+                    <i class="bx bx-tachometer p-2"></i>
+                  </time>
+                  <h4 class="font-bold text-lg mt-2 text-white">
+                    Speed & performance
+                  </h4>
+                  <p class="mt-2 text-slate-200 text-center">
+                    Optimize your WordPress site for speed and performance with
+                    image compression, browser caching, and script minification.
+                    Implement and configure caching plugins to reduce server
+                    load.
                   </p>
                 </article>
               </div>
@@ -243,54 +263,55 @@
 
             <!-- Experience Column -->
             <div>
-              <h3 class="text-xl font-semibold mb-4 text-white">Experience</h3>
               <div class="space-y-4">
                 <article
-                  class="p-5 bg-slate-700 rounded-xl hover:bg-slate-600 transition"
+                  class="p-5 bg-slate-700 rounded-xl hover:bg-slate-600 transition flex flex-col justify-center items-center"
                 >
-                  <time class="text-xs text-slate-300"
-                    >June 2025 - July 2025</time
+                  <time
+                    class="text-slate-300 text-3xl bg-slate-800 p-2 rounded-full items-center justify-between"
                   >
+                    <i class="bx bx-cart p-2"></i>
+                  </time>
                   <h4 class="font-bold text-lg mt-2 text-white">
-                    Web Developer
+                    ECommerce Solutions
                   </h4>
-                  <p class="mt-2 text-slate-200">
-                    I completed an internship in Web Development at Learning
-                    Horizon, where I gained hands-on experience in building and
-                    maintaining websites.
+                  <p class="mt-2 text-slate-200 text-center">
+                    Boost online sales with professional eCommerce solutions. I
+                    create secure, scalable online stores using WooCommerce,
+                    integrating payment gateways and custom features to maximize
+                    revenue
                   </p>
                 </article>
 
                 <article
-                  class="p-5 bg-slate-700 rounded-xl hover:bg-slate-600 transition"
+                  class="p-5 bg-slate-700 rounded-xl hover:bg-slate-600 transition flex flex-col justify-center items-center"
                 >
-                  <time class="text-xs text-slate-300"
-                    >July 2025 - August 2025</time
+                  <time
+                    class="text-slate-300 text-3xl bg-slate-800 p-2 rounded-full items-center justify-between"
                   >
-                  <h4 class="font-bold text-lg mt-2 text-white">
-                    Web Developer
-                  </h4>
-                  <p class="mt-2 text-slate-200">
-                    I completed an internship in Web Development at Code Alpha,
-                    where I gained hands-on experience in building and
-                    maintaining websites.
+                    <i class="bx bx-layout p-2"></i>
+                  </time>
+                  <h4 class="font-bold text-lg mt-2 text-white">Web Design</h4>
+                  <p class="mt-2 text-slate-200 text-center">
+                    create modern, clean, and user-friendly web designs that
+                    instantly build trust and make your brand look confident,
+                    credible and reflect your brand identity.
                   </p>
                 </article>
 
                 <article
-                  class="p-5 bg-slate-700 rounded-xl hover:bg-slate-600 transition"
+                  class="p-5 bg-slate-700 rounded-xl hover:bg-slate-600 transition flex flex-col justify-center items-center"
                 >
-                  <time class="text-xs text-slate-300"
-                    >March 2025 - August 2025</time
+                  <time
+                    class="text-slate-300 text-3xl bg-slate-800 p-2 rounded-full items-center justify-between"
                   >
-                  <h4 class="font-bold text-lg mt-2 text-white">
-                    Collaboration Projects
-                  </h4>
-                  <p class="mt-2 text-slate-200">
-                    I collaborated on various web development projects with
-                    various freelancers, where I built roadmap genrator ,
-                    feedback collector , Business dashboard for local shops and
-                    many more websites.
+                    <i class="bx bx-bug p-2"></i>
+                  </time>
+                  <h4 class="font-bold text-lg mt-2 text-white">Bug Fixing</h4>
+                  <p class="mt-2 text-slate-200 text-center">
+                    Identify and fix WordPress errors, responsiveness issues,
+                    theme issues, and plugin conflicts to ensure your website
+                    runs smoothly without interruptions.
                   </p>
                 </article>
               </div>
@@ -305,13 +326,13 @@
           <h2
             class="text-3xl font-bold text-center mb-10 max-w-6xl mx-auto items-center justify-between px-5 py-3 transition-all duration-300 bg-slate-800 backdrop-blur-md rounded-xl shadow-sm text-white"
           >
-            My <span class="text-accent">Skills</span>
+            <span class="text-accent">Skills</span>
           </h2>
 
           <div class="grid md:grid-cols-2 gap-8 items-start">
             <div class="bg-slate-800 p-6 rounded-xl shadow">
-              <h3 class="text-lg font-semibold mb-4 text-white">
-                Coding Skills
+              <h3 class="text-lg font-semibold mb-4 text-white text-center">
+                Technical Skills
               </h3>
 
               <!-- progress item -->
@@ -319,13 +340,13 @@
                 <!-- HTML 90% -->
                 <div class="mb-4">
                   <div class="flex justify-between mb-1">
-                    <span class="text-slate-300">HTML</span>
-                    <span class="text-slate-300">100%</span>
+                    <span class="text-slate-300">Wordpress</span>
+                    <span class="text-slate-300">98%</span>
                   </div>
                   <div class="w-full bg-white/30 rounded-full h-2">
                     <div
                       class="bg-white h-2 rounded-full"
-                      style="width: 100%"
+                      style="width: 98%"
                     ></div>
                   </div>
                 </div>
@@ -333,7 +354,7 @@
                 <!-- CSS 70% -->
                 <div class="mb-4">
                   <div class="flex justify-between mb-1">
-                    <span class="text-slate-300">CSS</span>
+                    <span class="text-slate-300">Elementor</span>
                     <span class="text-slate-300">95%</span>
                   </div>
                   <div class="w-full bg-white/30 rounded-full h-2">
@@ -347,7 +368,7 @@
                 <!-- Javascript 50% -->
                 <div class="mb-4">
                   <div class="flex justify-between mb-1">
-                    <span class="text-slate-300">JavaScript</span>
+                    <span class="text-slate-300">Theme Customization</span>
                     <span class="text-slate-300">90%</span>
                   </div>
                   <div class="w-full bg-white/30 rounded-full h-2">
@@ -361,7 +382,7 @@
                 <!-- Tailwind 100% -->
                 <div class="mb-4">
                   <div class="flex justify-between mb-1">
-                    <span class="text-slate-300">Tailwindcss</span>
+                    <span class="text-slate-300">HTML/CSS</span>
                     <span class="text-slate-300">100%</span>
                   </div>
                   <div class="w-full bg-white/30 rounded-full h-2">
@@ -375,38 +396,38 @@
                 <!-- Tailwind 100% -->
                 <div class="mb-4">
                   <div class="flex justify-between mb-1">
-                    <span class="text-slate-300">Bootstrap</span>
-                    <span class="text-slate-300">100%</span>
+                    <span class="text-slate-300">Javascript</span>
+                    <span class="text-slate-300">70%</span>
                   </div>
                   <div class="w-full bg-white/30 rounded-full h-2">
                     <div
                       class="bg-white h-2 rounded-full"
-                      style="width: 100%"
+                      style="width: 70%"
                     ></div>
                   </div>
                 </div>
                 <!-- React 40% -->
                 <div class="mb-4">
                   <div class="flex justify-between mb-1">
-                    <span class="text-slate-300">React</span>
-                    <span class="text-slate-300">80%</span>
+                    <span class="text-slate-300">Tailwind/Bootstrap</span>
+                    <span class="text-slate-300">95%</span>
                   </div>
                   <div class="w-full bg-white/30 rounded-full h-2">
                     <div
                       class="bg-white h-2 rounded-full"
-                      style="width: 80%"
+                      style="width: 95%"
                     ></div>
                   </div>
                 </div>
                 <div class="mb-4">
                   <div class="flex justify-between mb-1">
-                    <span class="text-slate-300">WordPress</span>
-                    <span class="text-slate-300">90%</span>
+                    <span class="text-slate-300">Figma to Frontend</span>
+                    <span class="text-slate-300">98%</span>
                   </div>
                   <div class="w-full bg-white/30 rounded-full h-2">
                     <div
                       class="bg-white h-2 rounded-full"
-                      style="width: 90%"
+                      style="width: 98%"
                     ></div>
                   </div>
                 </div>
@@ -415,24 +436,39 @@
 
             <!-- Add a short about / tools or soft skills box -->
             <div class="bg-slate-800 p-6 rounded-xl shadow">
-              <h3 class="text-lg font-semibold mb-4 text-white">
+              <h3 class="text-lg font-semibold mb-4 text-white text-center">
                 Tools & Soft Skills
               </h3>
               <ul class="grid grid-cols-2 gap-3 text-slate-200">
                 <li
                   class="px-3 py-2 bg-slate-700 rounded hover:scale-[1.02] transition text-sm text-slate-300"
                 >
+                  Wordpress
+                </li>
+                <li
+                  class="px-3 py-2 text-slate-300 bg-slate-700 rounded hover:scale-[1.02] transition text-sm"
+                >
                   VS Code
                 </li>
                 <li
                   class="px-3 py-2 text-slate-300 bg-slate-700 rounded hover:scale-[1.02] transition text-sm"
                 >
-                  Git & GitHub
+                  Elementor
                 </li>
                 <li
                   class="px-3 py-2 text-slate-300 bg-slate-700 rounded hover:scale-[1.02] transition text-sm"
                 >
-                  Responsive Design
+                  Figma
+                </li>
+                <li
+                  class="px-3 py-2 text-slate-300 bg-slate-700 rounded hover:scale-[1.02] transition text-sm"
+                >
+                  WooCommerce
+                </li>
+                <li
+                  class="px-3 py-2 text-slate-300 bg-slate-700 rounded hover:scale-[1.02] transition text-sm"
+                >
+                  SEO Tools
                 </li>
                 <li
                   class="px-3 py-2 text-slate-300 bg-slate-700 rounded hover:scale-[1.02] transition text-sm"
@@ -442,12 +478,17 @@
                 <li
                   class="px-3 py-2 text-slate-300 bg-slate-700 rounded hover:scale-[1.02] transition text-sm"
                 >
-                  Figma (basic)
+                  Communication
                 </li>
                 <li
                   class="px-3 py-2 text-slate-300 bg-slate-700 rounded hover:scale-[1.02] transition text-sm"
                 >
-                  Communication
+                  Project Management
+                </li>
+                <li
+                  class="px-3 py-2 text-slate-300 bg-slate-700 rounded hover:scale-[1.02] transition text-sm"
+                >
+                  Team Collaboration
                 </li>
               </ul>
             </div>
@@ -456,7 +497,7 @@
       </section>
 
       <!-- Projects -->
-      <section id="projects" class="py-12 md:py-16 bg-slate-900">
+      <section id="projects" class="py-12 md:py-8 bg-slate-900">
         <div class="max-w-6xl mx-auto px-6">
           <h2
             class="text-3xl font-bold text-center mb-10 max-w-6xl mx-auto items-center justify-between px-5 py-3 transition-all duration-300 bg-slate-800 backdrop-blur-md rounded-xl shadow-sm text-white"
@@ -470,22 +511,22 @@
               class="bg-slate-800 rounded-xl overflow-hidden shadow hover:shadow-2xl transform hover:-translate-y-1 transition"
             >
               <img
-                src="Black and White Modern Online Shop Facebook Post (4).png"
+                src="firstpro.png"
                 alt="User-Authentication"
                 class="w-full h-48 object-fill"
               />
               <div class="p-4">
                 <h3 class="font-bold text-lg mb-2 text-white">
-                  User-Authentication System
+                  CyberEdge IT Services Website
                 </h3>
                 <p class="text-sm text-slate-300 mb-3">
-                  User Authentication System – Developed a secure and responsive
-                  authentication system using React, Tailwind CSS, and Context
-                  API, featuring user registration, login, role management, and
-                  persistent sessions via localStorage
+                  A sleek and minimal IT service provider website built on
+                  Bootstrap. Includes homepage banner, services section, project
+                  gallery, about page, and contact form. Designed with attention
+                  to typography, spacing, and mobile friendliness.
                 </p>
                 <a
-                  href="WhatsApp Video 2025-07-27 at 9.48.52 PM.mp4"
+                  href="https://learningwebsit.netlify.app"
                   target="_blank"
                   class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-700 text-white hover:bg-slate-500 transition border-2 border-slate-500"
                   >View Project</a
@@ -498,7 +539,7 @@
               class="bg-slate-800 rounded-xl overflow-hidden shadow hover:shadow-2xl transform hover:-translate-y-1 transition"
             >
               <img
-                src="Green Cute Baby Food Product Instagram Post (1).png"
+                src="Secondpro.png"
                 alt="Baby food"
                 class="w-full h-48 object-fill"
               />
@@ -513,7 +554,7 @@
                   interactive features.
                 </p>
                 <a
-                  href="WhatsApp Video 2025-07-27 at 9.48.53 PM.mp4"
+                  href="https://ecomrecewebsite.netlify.app"
                   target="_blank"
                   class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-700 text-white hover:bg-slate-500 transition border-2 border-slate-500"
                   >View Project</a
@@ -526,22 +567,21 @@
               class="bg-slate-800 rounded-xl overflow-hidden shadow hover:shadow-2xl transform hover:-translate-y-1 transition"
             >
               <img
-                src="Black and White Modern Online Shop Facebook Post (2).png"
+                src="threepro.png"
                 alt="Feedback Collector"
                 class="w-full h-48 object-fill"
               />
               <div class="p-4">
-                <h3 class="font-bold text-lg mb-2 text-white">
-                  Feedback Collector
-                </h3>
+                <h3 class="font-bold text-lg mb-2 text-white">PW Skills</h3>
                 <p class="text-sm text-slate-300 mb-3">
-                  Feedback Collector for Freelancers – Created a responsive web
-                  app using HTML, Tailwind CSS, and JavaScript that allows
-                  freelancers to easily collect feedback, helping build
-                  credibility and showcase testimonials professionally.
+                  A responsive skill development courses website built using
+                  Tailwind CSS. The platform highlights various learning
+                  programs and courses with clear categorization and modern
+                  UI.Designed using Tailwind’s utility classes for clean
+                  structure,
                 </p>
                 <a
-                  href="WhatsApp Video 2025-07-27 at 9.48.16 PM (1).mp4"
+                  href="https://pwskil.netlify.app"
                   target="_blank"
                   class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-700 text-white hover:bg-slate-500 transition border-2 border-slate-500"
                   >View Project</a
@@ -549,6 +589,14 @@
               </div>
             </article>
           </div>
+        </div>
+        <div class="text-center mt-5">
+          <a
+            href="Projects.html"
+            target="_blank"
+            class="inline-flex gap-2 px-5 py-2 rounded-lg bg-slate-700 text-white hover:bg-slate-500 transition border-2 border-slate-500"
+            >View All Projects</a
+          >
         </div>
       </section>
 
@@ -621,6 +669,15 @@
     </main>
 
     <!-- Scripts -->
+    <script>
+      var typed = new Typed("#typed", {
+        strings: ["WordPress Developer", "Frontend Developer", "Web Designer"],
+        typeSpeed: 60,
+        backSpeed: 40,
+        backDelay: 2000,
+        loop: true,
+      });
+    </script>
     <!-- Scripts -->
     <script>
       // Mobile menu toggle
