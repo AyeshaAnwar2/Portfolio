@@ -113,19 +113,29 @@
       id="mobileNav"
       class="hidden md:hidden bg-slate-800 p-4 fixed w-full z-50 top-16 left-0 shadow-lg transition-all duration-500"
     >
-      <a href="#home" class="block py-2 text-slate-200 hover:text-accent"
+      <a
+        href="index.html#home"
+        class="block py-2 text-slate-200 hover:text-accent"
         >Home</a
       >
-      <a href="#education" class="block py-2 text-slate-200 hover:text-accent"
+      <a
+        href="index.html#education"
+        class="block py-2 text-slate-200 hover:text-accent"
         >Services</a
       >
-      <a href="#skills" class="block py-2 text-slate-200 hover:text-accent"
+      <a
+        href="index.html#skills"
+        class="block py-2 text-slate-200 hover:text-accent"
         >Skills</a
       >
-      <a href="#projects" class="block py-2 text-slate-200 hover:text-accent"
+      <a
+        href="index.html#projects"
+        class="block py-2 text-slate-200 hover:text-accent"
         >Projects</a
       >
-      <a href="#contact" class="block py-2 text-slate-200 hover:text-accent"
+      <a
+        href="index.html#contact"
+        class="block py-2 text-slate-200 hover:text-accent"
         >Contact</a
       >
     </nav>
@@ -295,7 +305,7 @@
                 service-focused content, and a user-friendly experience.
               </p>
               <a
-                href="skilltest.muavaz.com_home_.png"
+                href="properties.png"
                 target="_blank"
                 class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-slate-700 text-white hover:bg-slate-500 transition border-2 border-slate-500"
                 >View Project</a
@@ -358,5 +368,30 @@
         </div>
       </div>
     </section>
+
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menu-icon");
+      const mobileNav = document.getElementById("mobileNav");
+      menuBtn.addEventListener("click", () => {
+        mobileNav.classList.toggle("hidden");
+        menuBtn.querySelector("i").classList.toggle("bx-x");
+      });
+
+      // Sticky header effect on scroll (add shadow / stronger bg)
+      const headerInner = document.getElementById("header-inner");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 40) {
+          headerInner.classList.add(
+            "shadow-lg",
+            "backdrop-blur-md",
+            "bg-white/80",
+            "dark:bg-slate-800/80"
+          );
+        } else {
+          headerInner.classList.remove("shadow-lg");
+        }
+      });
+    </script>
   </body>
 </html>
